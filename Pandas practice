@@ -1,0 +1,38 @@
+import pandas as pd
+
+#creating dataframe
+def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
+    df = pd.DataFrame(student_data)
+    df = df.rename(columns={0: 'student_id',1:"age"})
+    return df
+
+#Get size of dataframe
+import pandas as pd
+
+def getDataframeSize(players: pd.DataFrame) -> List[int]:
+    num_rows, num_columns = players.shape
+    return([num_rows,num_columns])
+
+#Display first three rows of Dataframe
+
+import pandas as pd
+
+def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
+    first_3_rows = employees.head(3)
+    return(first_3_rows)
+
+#filter and select columns
+
+import pandas as pd
+
+def selectData(students: pd.DataFrame) -> pd.DataFrame:
+    filtered_df = students[students['student_id'] == 101]
+    filtered_df3 = filtered_df[['name' , 'age']]
+    return filtered_df3
+
+#create a new column
+
+
+def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['bonus'] = employees['salary'] * 2
+    return(employees)
